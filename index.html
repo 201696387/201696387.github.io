@@ -5,45 +5,196 @@
     <title>JFMaturana Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="w3-black">
+<body class="w3-black w3-content" style="max-width:1200px">
 
-<div class="w3-top">
-    <div class="w3-bar w3-black w3-padding w3-card" style="letter-spacing:4px;">
-        <a href="#home" class="w3-bar-item w3-button">JF Maturana</a>
-        <div class="w3-right w3-hide-small">
-            <a href="#about" class="w3-bar-item w3-button">About</a>
-            <a href="#gallery" class="w3-bar-item w3-button">Gallery</a>
-            <a href="https://github.com/201696387" class="w3-bar-item w3-button">GitHub</a>
-            <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-dark-gray w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+    <div class="w3-container w3-display-container w3-padding-16">
+        <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+        <h3 class="w3-wide w3-mobile"><b>JF Maturana</b></h3>
+    </div>
+    <div class="w3-padding-64 w3-large w3-text-light-gray" style="font-weight:bold">
+        <a href="#resume" class="w3-bar-item w3-button w3-mobile">Resume</a>
+        <a href="#portfolio" class="w3-bar-item w3-button w3-mobile">Portfolio</a>
+        <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-mobile" id="myBtn">
+            Project <i class="fa fa-caret-down"></i>
+        </a>
+        <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+            <a href="#" class="w3-bar-item w3-button w3-mobile">SpotLife</a>
+            <a href="#" class="w3-bar-item w3-button w3-mobile">AR Project</a>
+            <a href="#" class="w3-bar-item w3-button w3-mobile">MyMangaLibrary</a>
+        </div>
+        <a href="#footer" class="w3-bar-item w3-button w3-padding w3-mobile">Contact</a>
+    </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-dark-gray w3-xlarge">
+    <div class="w3-bar-item w3-padding-24 w3-wide">JF Maturana</div>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
+
+    <!-- Top header -->
+    <div class="w3-container w3-xlarge">
+        <img class="w3-image" src="img/phoneheld.jpg" alt="Handheld mobile phone">
+        <div class="w3-padding-large w3-white">
+            <h1>The Android App Dev</h1>
+        </div>
+    </div>
+
+    <!-- Resume -->
+    <div class="w3-container w3-margin w3-white" id="resume">
+        <h1>Hi, I'm Jean-François Maturana.</h1>
+        <p>Gamer, artist and programmer. I constantly try to learn new things to push forth innovative ideas.</p>
+    </div>
+
+    <!-- Portfolio grid -->
+    <div class="w3-row w3-grayscale" id="portfolio">
+        <div class="w3-container w3-margin">
+            <h1>Portfolio</h1>
+        </div>
+        <div class="w3-col l3 s6">
+            <div class="w3-container">
+                <img src="/img/gallery/01.jpg" style="width:100%">
+                <p>text</p>
+            </div>
+            <div class="w3-container">
+                <img src="/img/gallery/02.jpg" style="width:100%">
+                <p>text</p>
+            </div>
+        </div>
+
+        <div class="w3-col l3 s6">
+            <div class="w3-container">
+                <img src="/img/gallery/03.jpg" style="width:100%">
+                <p>text</p>
+            </div>
+            <div class="w3-container">
+                <img src="/img/gallery/04.jpg" style="width:100%">
+                <p>text</p>
+            </div>
+        </div>
+
+        <div class="w3-col l3 s6">
+            <div class="w3-container">
+                <img src="/img/gallery/05.jpg" style="width:100%">
+                <p>text</p>
+            </div>
+            <div class="w3-container">
+                <img src="/img/gallery/06.jpg" style="width:100%">
+                <p>text</p>
+            </div>
+        </div>
+
+        <div class="w3-col l3 s6">
+            <div class="w3-container">
+                <img src="/img/gallery/07.jpg" style="width:100%">
+                <p>text</p>
+            </div>
+            <div class="w3-container">
+                <img src="/img/gallery/08.jpg" style="width:100%">
+                <p>text</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="w3-container w3-white">
+        <div class="w3-container w3-margin">
+            <h1>SpotLife</h1>
+        </div>
+
+        <div class="w3-container w3-margin">
+            <h1>AR Project</h1>
+        </div>
+
+        <div class="w3-container w3-margin">
+            <h1>MyMangaLibrary</h1>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+        <div class="w3-row-padding">
+            <div class="w3-twothird s4">
+                <h4>Contact</h4>
+                <p>Questions? Go ahead.</p>
+                <form action="/action_page.php" target="_blank">
+                    <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
+                    <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+                    <p><input class="w3-input w3-border" type="text" placeholder="Subject" name="Subject" required></p>
+                    <p><input class="w3-input w3-border" type="text" placeholder="Message" name="Message" required></p>
+                    <button type="submit" class="w3-button w3-block w3-black">Send</button>
+                </form>
+            </div>
+
+            <div class="w3-third s4 w3-justify">
+                <h4>Info</h4>
+                <p><i class="fa fa-fw fa-map-marker"></i>Laval, QC</p>
+                <p><i class="fa fa-fw fa-phone"></i> (514) 371-6051</p>
+                <p><i class="fa fa-fw fa-envelope"></i> jfmaturana@gmail.com</p>
+                <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
+                <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
+                <i class="fa fa-snapchat w3-hover-opacity w3-large"></i>
+                <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
+                <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
+                <i class="fa fa-linkedin w3-hover-opacity w3-large"></i>
+            </div>
+        </div>
+    </footer>
+
+    <div class="w3-dark-gray w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
+
+    <!-- End page content -->
+</div>
+
+<!-- Newsletter Modal -->
+<div id="newsletter" class="w3-modal">
+    <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+        <div class="w3-container w3-white w3-center">
+            <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+            <h2 class="w3-wide">NEWSLETTER</h2>
+            <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+            <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
         </div>
     </div>
 </div>
 
-<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
-    <img class="w3-image" src="img/phoneheld.jpg" alt="Hamburger Catering" width="1600" height="800">
-    <div class="w3-display-bottomleft w3-padding-large w3-opacity">
-        <h1 class="w3-xxlarge w3-text-white">Mobile Dev</h1>
-    </div>
-</header>
+<script>
+    // Accordion
+    function myAccFunc() {
+        var x = document.getElementById("demoAcc");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
 
-<div class="w3-content w3-light-gray" style="max-width: 1600px">
-    <div class="w3-container w3-gray w3-padding-64" id="about">
-        <h1>About</h1><br>
-    </div>
+    // Click on the "Jeans" link on page load to open the accordion for demo purposes
+    document.getElementById("myBtn").click();
 
-    <div class="w3-container w3-dark-gray w3-padding-64" id="gallery">
-        <h1>Gallery</h1><br>
-    </div>
 
-    <div class="w3-container w3-padding-64" id="contact">
-        <h1>Contact</h1><br>
-    </div>
-</div>
+    // Script to open and close sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+    }
 
-<footer class="w3-center">
-    <p>@JFMaturana</p>
-</footer>
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+    }
+</script>
 
 </body>
 </html>
