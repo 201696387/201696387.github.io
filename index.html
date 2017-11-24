@@ -2,10 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JFMaturana Portfolio</title>
+    <title>JF Maturana CV</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script language="JavaScript">
+        function imgPrev(img1){
+            document.getElementById('preview').style.display='block';
+            document.getElementById('preview_content').src=img1;
+        }
+    </script>
+
 </head>
 <body class="w3-black w3-content" style="max-width:1200px">
 
@@ -14,17 +23,18 @@
     <div class="w3-container w3-display-container w3-padding-16">
         <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
         <h3 class="w3-wide w3-mobile"><b>JF Maturana</b></h3>
+        <img class="w3-image w3-grayscale-max w3-border w3-border-black" src="img/profile.jpg">
     </div>
-    <div class="w3-padding-64 w3-large w3-text-light-gray" style="font-weight:bold">
+    <div class="w3-padding-32 w3-large w3-text-light-gray" style="font-weight:bold">
         <a href="#resume" class="w3-bar-item w3-button w3-mobile">Resume</a>
         <a href="#portfolio" class="w3-bar-item w3-button w3-mobile">Portfolio</a>
         <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-mobile" id="myBtn">
             Project <i class="fa fa-caret-down"></i>
         </a>
         <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-            <a href="#" class="w3-bar-item w3-button w3-mobile">SpotLife</a>
-            <a href="#" class="w3-bar-item w3-button w3-mobile">AR Project</a>
-            <a href="#" class="w3-bar-item w3-button w3-mobile">MyMangaLibrary</a>
+            <a href="#spotlife" class="w3-bar-item w3-button w3-mobile">SpotLife</a>
+            <a href="#arproject" class="w3-bar-item w3-button w3-mobile">AR Project</a>
+            <a href="#mymangalibrary" class="w3-bar-item w3-button w3-mobile">MyMangaLibrary</a>
         </div>
         <a href="#footer" class="w3-bar-item w3-button w3-padding w3-mobile">Contact</a>
     </div>
@@ -32,7 +42,7 @@
 
 <!-- Top menu on small screens -->
 <header class="w3-bar w3-top w3-hide-large w3-dark-gray w3-xlarge">
-    <div class="w3-bar-item w3-padding-24 w3-wide">JF Maturana</div>
+    <div class="w3-bar-item w3-padding-24 w3-wide"><b>JF Maturana</b></div>
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
 </header>
 
@@ -43,89 +53,93 @@
 <div class="w3-main" style="margin-left:250px">
 
     <!-- Top header -->
-    <div class="w3-container w3-xlarge">
+    <div class="w3-display-container w3-xlarge w3-white">
         <img class="w3-image" src="img/phoneheld.jpg" alt="Handheld mobile phone">
-        <div class="w3-padding-large w3-white">
+        <div class="w3-display-bottomleft w3-padding-large w3-text-white">
             <h1>The Android App Dev</h1>
         </div>
     </div>
 
     <!-- Resume -->
-    <div class="w3-container w3-margin w3-white" id="resume">
+    <div class="w3-container w3-white w3-padding-large" id="resume">
         <h1>Hi, I'm Jean-François Maturana.</h1>
-        <p>Gamer, artist and programmer. I constantly try to learn new things to push forth innovative ideas.</p>
+        <p>Gamer, artist and programmer. I constantly try to learn new things to push forth new ideas and make them a reality.</p>
     </div>
 
     <!-- Portfolio grid -->
-    <div class="w3-row w3-grayscale" id="portfolio">
-        <div class="w3-container w3-margin">
+    <div class="w3-row w3-white" id="portfolio">
+        <div class="w3-container w3-padding-large">
             <h1>Portfolio</h1>
         </div>
-        <div class="w3-col l3 s6">
-            <div class="w3-container">
-                <img src="/img/gallery/01.jpg" style="width:100%">
-                <p>text</p>
+        <div class="w3-margin">
+            <div class="w3-col l3 s6">
+                <div class="w3-container">
+                    <a href="javascript:void(0)" onclick="imgPrev('img/gallery/modele_affaire.jpg')"><img class="w3-hover-opacity w3-border w3-border-black" src="img/gallery/modele_affaire.jpg" style="width:100%"></a>
+                    <p>Modele d'affaire </p>
+                </div>
+                <div class="w3-container">
+                    <a href="javascript:void(0)" onclick="imgPrev('img/gallery/company_logo.png')"><img class="w3-hover-opacity w3-border w3-border-black" src="img/gallery/company_logo.png" style="width:100%"></a>
+                    <p>Company Logo</p>
+                </div>
             </div>
-            <div class="w3-container">
-                <img src="/img/gallery/02.jpg" style="width:100%">
-                <p>text</p>
-            </div>
-        </div>
 
-        <div class="w3-col l3 s6">
-            <div class="w3-container">
-                <img src="/img/gallery/03.jpg" style="width:100%">
-                <p>text</p>
+            <div class="w3-col l3 s6">
+                <div class="w3-container">
+                    <a href="javascript:void(0)" onclick="imgPrev('img/gallery/photoshop.jpg')"><img class="w3-hover-opacity w3-border w3-border-black" src="img/gallery/photoshop.jpg" style="width:100%"></a>
+                    <p>Photoshop Editing</p>
+                </div>
+                <div class="w3-container">
+                    <a href="javascript:void(0)" onclick="imgPrev('img/gallery/modele_affaire.jpg')"><img class="w3-hover-opacity w3-border w3-border-black" src="img/gallery/modele_affaire.jpg" style="width:100%"></a>
+                    <p>text</p>
+                </div>
             </div>
-            <div class="w3-container">
-                <img src="/img/gallery/04.jpg" style="width:100%">
-                <p>text</p>
-            </div>
-        </div>
 
-        <div class="w3-col l3 s6">
-            <div class="w3-container">
-                <img src="/img/gallery/05.jpg" style="width:100%">
-                <p>text</p>
+            <div class="w3-col l3 s6">
+                <div class="w3-container">
+                    <a href="javascript:void(0)" onclick="imgPrev('img/gallery/modele_affaire.jpg')"><img class="w3-hover-opacity w3-border w3-border-black" src="img/gallery/modele_affaire.jpg" style="width:100%"></a>
+                    <p>text</p>
+                </div>
+                <div class="w3-container">
+                    <a href="javascript:void(0)" onclick="imgPrev('img/gallery/modele_affaire.jpg')"><img class="w3-hover-opacity w3-border w3-border-black" src="img/gallery/modele_affaire.jpg" style="width:100%"></a>
+                    <p>text</p>
+                </div>
             </div>
-            <div class="w3-container">
-                <img src="/img/gallery/06.jpg" style="width:100%">
-                <p>text</p>
-            </div>
-        </div>
 
-        <div class="w3-col l3 s6">
-            <div class="w3-container">
-                <img src="/img/gallery/07.jpg" style="width:100%">
-                <p>text</p>
-            </div>
-            <div class="w3-container">
-                <img src="/img/gallery/08.jpg" style="width:100%">
-                <p>text</p>
+            <div class="w3-col l3 s6">
+                <div class="w3-container">
+                    <a href="javascript:void(0)" onclick="imgPrev('img/gallery/modele_affaire.jpg')"><img class="w3-hover-opacity w3-border w3-border-black" src="img/gallery/modele_affaire.jpg" style="width:100%"></a>
+                    <p>text</p>
+                </div>
+                <div class="w3-container">
+                    <a href="javascript:void(0)" onclick="imgPrev('img/gallery/modele_affaire.jpg')"><img class="w3-hover-opacity w3-border w3-border-black" src="img/gallery/modele_affaire.jpg" style="width:100%"></a>
+                    <p>text</p>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Projects -->
     <div class="w3-container w3-white">
-        <div class="w3-container w3-margin">
+        <div class="w3-container w3-padding-large" id="spotlife">
             <h1>SpotLife</h1>
         </div>
 
-        <div class="w3-container w3-margin">
+        <div class="w3-container w3-padding-large" id="arproject">
             <h1>AR Project</h1>
         </div>
 
-        <div class="w3-container w3-margin">
+        <div class="w3-container w3-padding-large" id="mymangalibrary">
             <h1>MyMangaLibrary</h1>
         </div>
     </div>
 
     <!-- Footer -->
     <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+        <div class="w3-container w3-left w3-padding-large">
+            <h1>Contact</h1>
+        </div>
         <div class="w3-row-padding">
             <div class="w3-twothird s4">
-                <h4>Contact</h4>
                 <p>Questions? Go ahead.</p>
                 <form action="/action_page.php" target="_blank">
                     <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
@@ -141,12 +155,8 @@
                 <p><i class="fa fa-fw fa-map-marker"></i>Laval, QC</p>
                 <p><i class="fa fa-fw fa-phone"></i> (514) 371-6051</p>
                 <p><i class="fa fa-fw fa-envelope"></i> jfmaturana@gmail.com</p>
-                <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
-                <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
-                <i class="fa fa-snapchat w3-hover-opacity w3-large"></i>
-                <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
-                <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
-                <i class="fa fa-linkedin w3-hover-opacity w3-large"></i>
+                <a href="https://www.linkedin.com/in/jean-fran%C3%A7ois-maturana/"><p><i class="fa fa-linkedin w3-hover-opacity w3-large"></i> Linkedin</p></a>
+                <a href="https://github.com/201696387/"><p><i class="fa fa-github w3-hover-opacity w3-large"></i> GitHub</p></a>
             </div>
         </div>
     </footer>
@@ -156,15 +166,14 @@
     <!-- End page content -->
 </div>
 
-<!-- Newsletter Modal -->
-<div id="newsletter" class="w3-modal">
-    <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+<!-- Image preview -->
+<div id="preview" class="w3-modal">
+    <div class="w3-modal-content w3-animate-zoom w3-gray" style="padding: 16px">
         <div class="w3-container w3-white w3-center">
-            <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
-            <h2 class="w3-wide">NEWSLETTER</h2>
-            <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
-            <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
-            <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
+            <i onclick="document.getElementById('preview').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+            <div class="w3-image">
+                <img class="w3-padding-16" id="preview_content" style="max-width:80%;">
+            </div>
         </div>
     </div>
 </div>
