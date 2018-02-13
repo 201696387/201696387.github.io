@@ -7,10 +7,80 @@
     <link rel="stylesheet" href="css/w3.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
+    <link rel="stylesheet" href="css/portfolio.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.1/pixi.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<body class="w3-black w3-content" style="max-width:1200px">
+<body class="w3-black w3-content" style="max-width:1200px;">
 
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-white"  style="min-height: 100vh;">
+
+    <!-- Top header -->
+    <div class="w3-display-container w3-xlarge">
+        <img class="w3-image" src="img/phoneheld.jpg" alt="Handheld mobile phone">
+        <div class="w3-display-bottomleft w3-padding-large w3-text-white">
+            <h1>The Mobile App Dev</h1>
+        </div>
+    </div>
+
+    <!-- Resume -->
+    <div class="w3-container w3-white w3-padding-large" id="resume">
+        <div id="frame" class="frame">
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    var music;
+    var bgImageURL;
+
+    var frame = $('#frame');
+
+    window.onload = function () {
+        var app = new PIXI.Application(1200, 600, {transparent: true});
+        document.getElementById("frame").appendChild(app.view);
+
+        loadMusicVizualiser(app);
+        //loadFighterScene(app);
+
+        /*
+        // Listen for animate update
+        app.ticker.add(function(delta) {
+            // just for fun, let's rotate mr rabbit a little
+            // delta is 1 if running at 100% performance
+            // creates frame-independent tranformation
+            ship.rotation += 0.1 * delta;
+        });//*/
+    }
+
+    function loadMusicVizualiser(app) {
+        frame.fadeOut(1000, function(){
+           frame.css('background-color','black');
+           frame.fadeIn(1000);
+        });
+    }
+    
+    function loadFighterScene(app) {
+        frame.css('background-image','url(css/space.png)');
+
+        // create a new Sprite from an image path
+        var ship = PIXI.Sprite.fromImage('img/sprite/fighter.png');
+
+        // center the sprite's anchor point
+        ship.anchor.set(0.5);
+
+        ship.scale.x *= 0.2;
+        ship.scale.y *= 0.2;
+
+        // move the sprite to the center of the screen
+        ship.x = app.screen.width / 2;
+        ship.y = app.screen.height / 2;
+
+        app.stage.addChild(ship);
+    }
+</script>
 </body>
 </html>
