@@ -17,33 +17,41 @@
 <div class="w3-main w3-white"  style="min-height: 100vh;">
 
     <!-- Top header -->
-    <div class="w3-display-container w3-xlarge">
-        <img class="w3-image" src="img/phoneheld.jpg" alt="Handheld mobile phone">
-        <div class="w3-display-bottomleft w3-padding-large w3-text-white">
-            <h1>The Mobile App Dev</h1>
+    <div class="w3-container">
+        <div class="w3-padding-large w3-text-black">
+            <h1>The Mobile App Dev's Portfolio Gallery</h1>
         </div>
     </div>
 
     <!-- Resume -->
     <div class="w3-container w3-white w3-padding-large" id="resume">
-        <div id="frame" class="frame">
-        </div>
+        <div id="frame" class="frame" />
     </div>
 
 </div>
 
 
 <script>
+    var app;
+
+    var menuScene;
+
     var music;
     var bgImageURL;
 
     var frame = $('#frame');
+    var width = frame.width();
+    var height = width*(600/800);
 
     window.onload = function () {
-        var app = new PIXI.Application(1200, 600, {transparent: true});
-        document.getElementById("frame").appendChild(app.view);
+        app = new PIXI.Application(width, height, {transparent: true});
 
-        loadMusicVizualiser(app);
+        frame.append(app.view); //jQuery Method
+        //document.getElementById("frame").appendChild(app.view); //DOM Method
+
+        loadGallery();
+
+        //loadMusicVizualiser(app);
         //loadFighterScene(app);
 
         /*
@@ -56,14 +64,62 @@
         });//*/
     }
 
-    function loadMusicVizualiser(app) {
+    function loadGallery(){
+        frame.css('background-image','url(css/black_thread.png)')
+        app.renderer.backgroundColor = 0x061639;
+
+        var leftArr = PIXI.Sprite.fromImage('img/sprite/left_arrow.png');
+        leftArr.anchor.set(0.5);
+        leftArr.x = 32;
+        leftArr.y = app.screen.height / 2;
+
+        var rightArr = PIXI.Sprite.fromImage('img/sprite/right_arrow.png');
+        rightArr.anchor.set(0.5);
+        rightArr.x = app.screen.width-32;
+        rightArr.y = app.screen.height / 2;
+
+        var musicViz = PIXI.Sprite.fromImage('img/sprite/musicViz.png');
+        musicViz.anchor.set(0.5);
+        musicViz.x = app.screen.width / 2;
+        musicViz.y = app.screen.height / 2;
+
+        var galleryContainer = new PIXI.Container();
+        galleryContainer.addChild(musicViz);
+
+        leftArr.interactive = true;
+        leftArr.buttonMode = true;
+        leftArr.on('click', moveLeft);
+        leftArr.on('tap', moveLeft);
+
+        rightArr.interactive = true;
+        rightArr.buttonMode = true;
+        rightArr.on('click', moveRight);
+        rightArr.on('tap', moveRight);
+
+        menuScene = new PIXI.Container();
+        menuScene.addChild(leftArr);
+        menuScene.addChild(rightArr);
+        menuScene.addChild(galleryContainer);
+
+        app.stage.addChild(menuScene);
+    }
+
+    function moveLeft(){
+
+    }
+
+    function moveRight(){
+
+    }
+
+    function loadMusicVizualiser() {
         frame.fadeOut(1000, function(){
            frame.css('background-color','black');
            frame.fadeIn(1000);
         });
     }
     
-    function loadFighterScene(app) {
+    function loadFighterScene() {
         frame.css('background-image','url(css/space.png)');
 
         // create a new Sprite from an image path
